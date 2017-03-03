@@ -10,6 +10,16 @@ function Order(customer, delievery, pizza){
   this.pizza = pizza;
 }
 
+function Customer(name,phone,street,city,state,zip){
+  this.name = name;
+  this.phone = phone;
+  this.street = street;
+  this.city = city;
+  this.state = state;
+  this.zip = zip;
+
+}
+
 //order cost
 Pizza.prototype.cost = function(order){
   var order = order;
@@ -79,7 +89,6 @@ Pizza.prototype.waitTime = function(order){
   pizzaToppings.forEach(function(elem){
     elem.forEach(function(){
         waitTime += 1;
-        console.log('adding a minute for topping');
     });
   });
 
@@ -98,14 +107,13 @@ var cheeseToppings = ["cheddar","mozzarella","provolone","parmesan"]
 var meatToppings = ["cheese","perperoni","canadianBacon","bacon","chicken"]
 var veggieToppings = ["blackOlives","greenOlives","greenPeppers","redPeppers","jalapenos","greenOnion","redOnion","mushrooms","pepperoncini","tomatoes","pineapple"]
 
-//Dynamtic
-var newCustomer = "Keith";
-//arguments: toppings,size,price
-var newPizza = new Pizza([["cheddar","mozzarella"],["sausage"],["greenOlives","blackOlives"]],pizzaSize[1]);
-//arguments: customer, delievery, pizza
-var newOrder = new Order("Keith",delieveryType[1],newPizza);
-
 //User Logic
 $(function(){
+  $('.pizzaOrderingForm').submit(function(){
+
+
+
+
+  });//end of pizza ordering form
 
 });
