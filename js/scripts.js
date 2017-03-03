@@ -10,6 +10,7 @@ function Order(customer, delievery, pizza){
   this.pizza = pizza;
 }
 
+//order cost
 Pizza.prototype.cost = function(order){
   var order = order;
   var pizza = order.pizza;
@@ -55,6 +56,7 @@ Pizza.prototype.cost = function(order){
   return cost;
 }
 
+//order wait time
 Pizza.prototype.waitTime = function(order){
   var order = order;
   var pizzaSize = order.pizza.size[1];
