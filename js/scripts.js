@@ -51,12 +51,39 @@ Pizza.prototype.cost = function(order){
   if(delievery == "delievery"){
     cost += 3;
   }
+
   return cost;
 }
 
 Pizza.prototype.waitTime = function(order){
   var order = order;
-  var waitTime;
+  var pizzaSize = order.pizza.size[1];
+  var delieveryType = order.delieveryType;
+  var pizzaToppings = order.pizza.toppings;
+  var waitTime = 0;
+
+  //cooking time dependant on pizza size
+  if(pizzaSize == "8 inch"){
+    waitTime += 8;
+  } else if(pizzaSize == "12 inch"){
+    waitTime += 12;
+  } else if(pizzaSize == "16 inch"){
+    waitTime += 16;
+  } else if(pizzaSize == "20 inch"){
+    waitTime += 25;
+  }
+
+  //add a min for each topping
+  pizzaToppings.forEach(function(elem){
+    elem.forEach(function(){
+        waitTime += 1;
+        console.log('adding a minute for topping');
+    });
+  });
+
+  if(delieveryType == "delievery"){
+    waitTime += 15;
+  }
 
   return waitTime;
 }
@@ -75,8 +102,6 @@ var newCustomer = "Keith";
 var newPizza = new Pizza([["cheddar","mozzarella"],["sausage"],["greenOlives","blackOlives"]],pizzaSize[1]);
 //arguments: customer, delievery, pizza
 var newOrder = new Order("Keith",delieveryType[1],newPizza);
-var newPizzaDelieveryType;
-var newPizzaSize;
 
 //User Logic
 $(function(){
