@@ -27,15 +27,18 @@ pizza.prototype.waitTime = function(order){
 }
 
 //Varibles
-var newOrder = new order();
-var newPizza = new pizza();
-var delieveryType;
-var pizzaSize;
-var pizzaTopping = [];
+//Static
+var pizzaSize = [["personal", "8 inch"],["medium", "12 inch"],["large", "16 inch"],["party", "20 inch"]];
 var cheeseToppings = ["cheddar","mozzarella","provolone","parmesan"]
 var meatToppings = ["cheese","perperoni","canadianBacon","bacon","chicken"]
 var veggieToppings = ["olives","greenOlives","greenPeppers","redPeppers","jalapenos","greenOnion","redOnion","mushrooms","pepperoncini","tomatoes","pineapple"]
 
+//Dynamtic
+var newPizzaOrder = new order();
+var newPizza = new pizza();
+var newPizzaDelieveryType;
+var newPizzaSize;
+var newPizzaTopping = [];
 
 //User Logic
 $(function(){
