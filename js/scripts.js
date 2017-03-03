@@ -17,7 +17,6 @@ function Customer(name,phone,street,city,state,zip){
   this.city = city;
   this.state = state;
   this.zip = zip;
-
 }
 
 //order cost
@@ -113,7 +112,5 @@ $(function(){
 
 
 
-
   });//end of pizza ordering form
-
 });

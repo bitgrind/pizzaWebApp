@@ -13,7 +13,38 @@
     </header>
     <main>
       <form class="pizzaOrderingForm">
-
+        <div class="">
+          <label for=""><h1>Size of Pizza</h1></label>
+          <input type="checkbox" name="personal" value="personal">
+          <input type="checkbox" name="medium" value="medium">
+          <input type="checkbox" name="large" value="large">
+          <input type="checkbox" name="party" value="party">
+        </div>
+        <div>
+          <label for=""><h1>Delievery Type</h1></label>
+          <input type="checkbox" name="deliever-type" value="pickup">
+          <input type="checkbox" name="deliever-type" value="delievery">
+          <input type="checkbox" name="deliever-type" value="instore">
+          <div class="delievery-address">
+            <h2>Address:</h2>
+            <div class="form-group">
+              <label for=""></label>
+              <input class="form-control" type="text" name="address-street">
+            </div>
+            <div class="form-group">
+              <label for=""></label>
+              <input class="form-control" type="text" name="address-city">
+            </div>
+            <div class="form-group">
+              <label for=""></label>
+              <input class="form-control" type="text" name="address-state">
+            </div>
+            <div class="form-group">
+              <label for=""></label>
+              <input class="form-control" type="text" name="address-zip">
+            </div>
+          </div>
+        </div>
       </form>
     </main>
     <footer></footer>
