@@ -8,8 +8,7 @@
 | Program makes a pizza with toppings (cheese=default) | pizza | cheese |
 | Size of pizza is determined by user (medium=default) | pizza | medium |
 | Delivery of pizza is determined by user (pickup=default) | pizza | pickup |
-| Price of pizza is determined by size and toppings and delivery method | medium, cheese, pizza | $10 |
-
+| Price of pizza is determined by size and toppings and delivery method | medium, cheese, pickup | $10 |
 
 ## Author Keith Stedman
 ###License:
