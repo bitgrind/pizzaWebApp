@@ -69,19 +69,19 @@ Pizza.prototype.cost = function(order){
 //order wait time
 Pizza.prototype.waitTime = function(order){
   var order = order;
-  var pizzaSize = order.pizza.size[1];
+  var waitPizzaSize = order.pizza.size;
   var delieveryType = order.delieveryType;
   var pizzaToppings = order.pizza.toppings;
   var waitTime = 0;
 
   //cooking time dependant on pizza size
-  if(pizzaSize == "8 inch"){
+  if(waitPizzaSize == "personal"){
     waitTime += 8;
-  } else if(pizzaSize == "12 inch"){
+  } else if(waitPizzaSize == "medium"){
     waitTime += 12;
-  } else if(pizzaSize == "16 inch"){
+  } else if(waitPizzaSize == "large"){
     waitTime += 16;
-  } else if(pizzaSize == "20 inch"){
+  } else if(waitPizzaSize == "party"){
     waitTime += 25;
   }
 
