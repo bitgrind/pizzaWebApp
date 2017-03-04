@@ -158,6 +158,7 @@ $(function(){
     console.log(newPizza.size);
 
     $(".order-cost span").html(newPizza.cost(newOrder));
+    $(".order-wait span").html(newPizza.waitTime(newOrder));
 
 
   });//end of pizza ordering form
