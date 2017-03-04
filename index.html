@@ -12,39 +12,127 @@
         <h1>Pizza A Go Go</h1>
     </header>
     <main>
+      <div id="order-status">
+        <h1>Order Status</h1>
+        <h2 class="order-customer">Name: <span></span></h2>
+        <h2 class="order-size">Pizza Size: <span></span></h2>
+        <h2 class="order-toppings">Toppings: <span></span></h2>
+        <h2 class="order-cost">Cost: <span></span></h2>
+      </div>
       <form class="pizzaOrderingForm">
-        <div class="">
-          <label for=""><h1>Size of Pizza</h1></label>
-          <input type="checkbox" name="personal" value="personal">
-          <input type="checkbox" name="medium" value="medium">
-          <input type="checkbox" name="large" value="large">
-          <input type="checkbox" name="party" value="party">
+        <div class="input-control">
+          <label>Name</label>
+          <input id="customer" class="input-control" type="text" name="customer" value="">
         </div>
-        <div>
-          <label for=""><h1>Delievery Type</h1></label>
-          <input type="checkbox" name="deliever-type" value="pickup">
-          <input type="checkbox" name="deliever-type" value="delievery">
-          <input type="checkbox" name="deliever-type" value="instore">
+        <div class="pizza-sizes row">
+          <h1>Pick a Size</h1>
+          <div class="col-md-3">
+            <h3>Personal</h3>
+            <span for="personal"></span>
+            <input class="pizzaSize" type="radio" name="pizzaSize" value="personal">
+          </div>
+          <div class="col-md-3">
+            <h3>Medium</h3>
+            <span for="medium"></span>
+            <input class="pizzaSize" type="radio" name="pizzaSize" value="medium">
+          </div>
+          <div class="col-md-3">
+            <h3>Large</h3>
+            <span for="large"></span>
+            <input class="pizzaSize" type="radio" name="pizzaSize" value="large">
+          </div>
+          <div class="col-md-3">
+            <h3>Party</h3>
+            <span for="party"></span>
+            <input class="pizzaSize" type="radio" name="pizzaSize" value="party">
+          </div>
+        </div>
+        <div class="cheese-types row">
+          <h1>Cheeses</h1>
+          <div class="col-md-3">
+            <label for="cheader"><h3>Cheader</h3></label>
+            <input id="cheader" type="checkbox" name="pizzaCheese" value="cheader">
+            <img src="img/cheeses/cheddar.jpg" />
+          </div>
+          <div class="col-md-3">
+            <label for="mozzarella"><h3>Mozzarella</h3></label>
+            <input id="mozzarella" type="checkbox" name="pizzaCheese" value="mozzarella">
+            <img src="img/cheeses/mozzarella.jpg" />
+          </div>
+          <div class="col-md-3">
+            <label for="provolone"><h3>Provolone</h3></label>
+            <input id="provolone" type="checkbox" name="pizzaCheese" value="provolone">
+            <img src="img/cheeses/provolone.jpg" />
+          </div>
+          <div class="col-md-3">
+            <label for="parmesan"><h3>Parmesan</h3></label>
+            <input id="parmesan" type="checkbox" name="pizzaCheese" value="parmesan">
+            <img src="img/cheeses/parmesan.jpg" />
+          </div>
+        </div>
+        <div class="meat-types row">
+          <h1>Meats</h1>
+          <div>
+            <label for="perperoni"><h3>Perperoni</h3></label>
+            <input id="perperoni" type="checkbox" name="pizzaMeat" value="perperoni">
+            <img id="perperoniimg" src="img/meats/perperoni.jpg">
+          </div>
+          <div>
+            <label for="canadianBacon"><h3>Canadian Bacon</h3></label>
+            <input id="canadianBacon" type="checkbox" name="pizzaMeat" value="canadianBacon">
+            <img src="img/meats/canadianBacon.jpg">
+          </div>
+          <div>
+            <label for="sausage"><h3>Sausage</h3></label>
+            <input id="sausage" type="checkbox" name="pizzaMeat" value="sausage">
+            <img src="img/meats/sausage.jpg">
+          </div>
+          <div>
+            <label for="bacon"><h3>Bacon</h3></label>
+            <input id="bacon" type="checkbox" name="pizzaMeat" value="bacon">
+            <img src="img/meats/bacon.jpg">
+          </div>
+          <div>
+            <label for="chicken"><h3>Chicken</h3></label>
+            <input id="chicken" type="checkbox" name="pizzaMeat" value="chicken">
+            <img src="img/meats/chicken.jpg">
+          </div>
+        </div>
+        <div class="delievery-type">
+          <h1>Delievery Type</h1>
+          <div class="col-md-4">
+            <label for="">Pick-up</label>
+            <input type="radio" name="deliever-type" value="pickup">
+          </div>
+          <div class="col-md-4">
+            <label for="">Eat Instore</label>
+            <input type="radio" name="deliever-type" value="instore">
+          </div>
+          <div class="col-md-4">
+            <label for="">Delievery</label>
+            <input id="delieveryType" type="radio" name="deliever-type" value="delievery">
+          </div>
           <div class="delievery-address">
             <h2>Address:</h2>
             <div class="form-group">
-              <label for=""></label>
+              <label for="">Address</label>
               <input class="form-control" type="text" name="address-street">
             </div>
             <div class="form-group">
-              <label for=""></label>
+              <label for="">City</label>
               <input class="form-control" type="text" name="address-city">
             </div>
             <div class="form-group">
-              <label for=""></label>
+              <label for="">State</label>
               <input class="form-control" type="text" name="address-state">
             </div>
             <div class="form-group">
-              <label for=""></label>
+              <label for="">Zip</label>
               <input class="form-control" type="text" name="address-zip">
             </div>
           </div>
         </div>
+        <input type="submit" value="Order Pizza!">
       </form>
     </main>
     <footer></footer>

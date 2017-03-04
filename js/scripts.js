@@ -21,11 +21,12 @@ function Customer(name,phone,street,city,state,zip){
 
 //order cost
 Pizza.prototype.cost = function(order){
+  console.log(order.pizza.size);
   var order = order;
   var pizza = order.pizza;
   var customer = order.customer;
   var delievery = order.delieveryType;
-  var pizzaSize = order.pizza.size[1];
+  var orderedPizzaSize = order.pizza.size;
   var pizzaToppings = order.pizza.toppings;
   var cost = 0;
 
@@ -47,13 +48,13 @@ Pizza.prototype.cost = function(order){
   });
 
   //adding to cost dependant on size of Pizza
-  if(pizzaSize == "8 inch"){
+  if(orderedPizzaSize == "personal"){
     cost += 5;
-  } else if(pizzaSize == "12 inch"){
+  } else if(orderedPizzaSize == "medium"){
     cost += 7.5;
-  } else if(pizzaSize == "16 inch"){
+  } else if(orderedPizzaSize == "large"){
     cost += 12;
-  } else if(pizzaSize == "20 inch"){
+  } else if(orderedPizzaSize == "party"){
     cost += 20;
   }
 
@@ -108,9 +109,60 @@ var veggieToppings = ["blackOlives","greenOlives","greenPeppers","redPeppers","j
 
 //User Logic
 $(function(){
-  $('.pizzaOrderingForm').submit(function(){
+  $('.pizzaOrderingForm').submit(function(elem){
+    event.preventDefault();
 
+    $("#order-status").show(500);
+    $(".pizzaOrderingForm").hide(500);
+
+    var newCustomer = new Customer();
+    var allToppings = [];
+    var cheeseToppings = [];
+    var meatToppings = [];
+    var veggieToppings = [];
+    var num = 0;
+    var delieveryMethod = $('input:radio[name=deliever-type]:checked').val()
+    var pizzaOrderSize = $('input:radio[name=pizzaSize]:checked').val()
+
+    $(".order-size span").html(pizzaOrderSize);
+
+    $('input:checkbox[name=pizzaCheese]:checked').each(function(){
+      cheeseToppings[num] = $(this).val();
+      num++;
+    });
+
+    num = 0;
+    $('input:checkbox[name=pizzaMeat]:checked').each(function(){
+      meatToppings[num] = $(this).val();
+      num++;
+    });
+    allToppings[0] = cheeseToppings;
+    allToppings[1] = meatToppings;
+    // allToppings[2] = veggieToppings;
+
+    var newPizza = new Pizza(allToppings, pizzaOrderSize);
+    var newOrder = new Order(newCustomer.name, delieveryMethod, newPizza);
+
+    newPizza.toppings = allToppings;
+    newCustomer.name = $('#customer').val();
+    newPizza.size = $('input:radio[name=pizzaSize]:checked').val();
+
+
+    $('.order-customer span').html(newCustomer.name);
+
+    $(allToppings).each(function(el){
+      $(".order-toppings span").append(this+", ")
+    });
+
+    console.log(newOrder);
+    console.log(newPizza.size);
+
+    $(".order-cost span").html(newPizza.cost(newOrder));
 
 
   });//end of pizza ordering form
+
+    $("#delieveryType").click(function(){
+      $('.delievery-address').show(500);
+    });
 });
